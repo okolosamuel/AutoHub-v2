@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finance — AutoHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="nav.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false"><span class="bar"></span></button>
+        <div class="logo">AutoHub</div>
+        <nav class="nav-links">
+          <a href="index.html">Buy</a>
+          <a href="sell.html">Sell</a>
+          <a href="finance.html" class="active">Finance</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="actions">
+          <a class="btn outline" href="login.html">Login</a>
+          <a class="btn primary" href="signup.html">Sign Up</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero page-hero">
+      <div class="hero-bg"></div>
+      <div class="container hero-content">
+        <h1>Flexible Financing</h1>
+        <p>Estimate monthly payments and start pre‑approval in minutes.</p>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="container">
+        <div class="form-card">
+          <h2 style="margin-top:0">Payment Calculator</h2>
+          <form class="form-grid" id="calcForm">
+            <div class="field"><label>Vehicle Price</label><input id="price" type="number" value="65000" /></div>
+            <div class="field"><label>Down Payment</label><input id="down" type="number" value="10000" /></div>
+            <div class="field"><label>Interest Rate (%)</label><input id="rate" type="number" value="6.5" step="0.01" /></div>
+            <div class="field"><label>Term (months)</label><input id="term" type="number" value="60" /></div>
+            <div class="form-actions" style="grid-column:1/-1">
+              <button class="btn outline" type="reset">Reset</button>
+              <button class="btn primary" type="submit">Calculate</button>
+            </div>
+          </form>
+          <div id="result" style="margin-top:10px; font-weight:700;"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer"><div class="container"><p>© 2025 AutoHub. All rights reserved.</p></div></footer>
+
+    <script>
+      const fmt = (n) => `$${Number(n).toLocaleString(undefined, {maximumFractionDigits: 2})}`;
+      document.getElementById('calcForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const price = Number(document.getElementById('price').value || 0);
+        const down = Number(document.getElementById('down').value || 0);
+        const rate = Number(document.getElementById('rate').value || 0) / 100 / 12; // monthly
+        const term = Number(document.getElementById('term').value || 0);
+        const principal = Math.max(0, price - down);
+        let monthly = 0;
+        if (rate === 0) {
+          monthly = principal / term;
+        } else {
+          monthly = principal * (rate / (1 - Math.pow(1 + rate, -term)));
+        }
+        const total = monthly * term;
+        document.getElementById('result').textContent = `Monthly: ${fmt(monthly)} • Total: ${fmt(total)}`;
+      });
+    </script>
+  </body>
+</html>

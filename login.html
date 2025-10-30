@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login — AutoHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="nav.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false"><span class="bar"></span></button>
+        <div class="logo">AutoHub</div>
+        <nav class="nav-links">
+          <a href="index.html">Buy</a>
+          <a href="sell.html">Sell</a>
+          <a href="finance.html">Finance</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="actions">
+          <a class="btn outline" href="login.html" class="active">Login</a>
+          <a class="btn primary" href="signup.html">Sign Up</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero page-hero">
+      <div class="hero-bg"></div>
+      <div class="container hero-content">
+        <h1>Welcome Back</h1>
+        <p>Log in to manage your listings and saved vehicles.</p>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="container" style="max-width:560px">
+        <div class="form-card">
+          <h2 style="margin-top:0">Login</h2>
+          <form class="form-grid" style="grid-template-columns:1fr">
+            <div class="field"><label>Email</label><input type="email" placeholder="you@example.com" /></div>
+            <div class="field"><label>Password</label><input type="password" placeholder="••••••••" /></div>
+            <div class="form-actions">
+              <a href="#" class="btn outline">Forgot Password</a>
+              <button class="btn primary" type="submit">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer"><div class="container"><p>© 2025 AutoHub. All rights reserved.</p></div></footer>
+  </body>
+</html>

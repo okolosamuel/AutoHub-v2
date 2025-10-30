@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — AutoHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="nav.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false"><span class="bar"></span></button>
+        <div class="logo">AutoHub</div>
+        <nav class="nav-links">
+          <a href="index.html">Buy</a>
+          <a href="sell.html">Sell</a>
+          <a href="finance.html">Finance</a>
+          <a href="contact.html" class="active">Contact</a>
+        </nav>
+        <div class="actions">
+          <a class="btn outline" href="login.html">Login</a>
+          <a class="btn primary" href="signup.html">Sign Up</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero page-hero">
+      <div class="hero-bg"></div>
+      <div class="container hero-content">
+        <h1>Contact Us</h1>
+        <p>We’re here to help with buying, selling, or financing.</p>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="container">
+        <div class="form-card">
+          <h2 style="margin-top:0">Send a Message</h2>
+          <form class="form-grid">
+            <div class="field"><label>Name</label><input type="text" placeholder="Jane Doe" /></div>
+            <div class="field"><label>Email</label><input type="email" placeholder="jane@example.com" /></div>
+            <div class="field" style="grid-column:1/-1"><label>Subject</label><input type="text" placeholder="How can we help?" /></div>
+            <div class="field" style="grid-column:1/-1"><label>Message</label><textarea rows="5" placeholder="Type your message"></textarea></div>
+            <div class="form-actions" style="grid-column:1/-1">
+              <button class="btn outline" type="reset">Reset</button>
+              <button class="btn primary" type="submit">Send Message</button>
+            </div>
+          </form>
+        </div>
+        <p style="margin-top:16px; color:#64748b">Or reach us at support@autohub.example • +1 (555) 123‑4567</p>
+      </div>
+    </section>
+
+    <footer class="site-footer"><div class="container"><p>© 2025 AutoHub. All rights reserved.</p></div></footer>
+  </body>
+</html>

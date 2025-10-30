@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up — AutoHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="nav.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false"><span class="bar"></span></button>
+        <div class="logo">AutoHub</div>
+        <nav class="nav-links">
+          <a href="index.html">Buy</a>
+          <a href="sell.html">Sell</a>
+          <a href="finance.html">Finance</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="actions">
+          <a class="btn outline" href="login.html">Login</a>
+          <a class="btn primary" href="signup.html" class="active">Sign Up</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero page-hero">
+      <div class="hero-bg"></div>
+      <div class="container hero-content">
+        <h1>Create Your Account</h1>
+        <p>Save favorites, track listings, and finance faster.</p>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="container" style="max-width:560px">
+        <div class="form-card">
+          <h2 style="margin-top:0">Sign Up</h2>
+          <form class="form-grid" id="signupForm" style="grid-template-columns:1fr">
+            <div class="field"><label>Full Name</label><input type="text" placeholder="Alex Kim" required /></div>
+            <div class="field"><label>Email</label><input type="email" placeholder="alex@example.com" required /></div>
+            <div class="field"><label>Password</label><input id="pw" type="password" minlength="8" required /></div>
+            <div class="field"><label>Confirm Password</label><input id="pw2" type="password" minlength="8" required /></div>
+            <div class="form-actions">
+              <button class="btn outline" type="reset">Reset</button>
+              <button class="btn primary" type="submit">Create Account</button>
+            </div>
+          </form>
+          <div id="signupMsg" style="margin-top:10px; font-weight:700;"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer"><div class="container"><p>© 2025 AutoHub. All rights reserved.</p></div></footer>
+
+    <script>
+      document.getElementById('signupForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const a = document.getElementById('pw').value;
+        const b = document.getElementById('pw2').value;
+        const msg = document.getElementById('signupMsg');
+        if (a !== b) {
+          msg.style.color = '#e53935';
+          msg.textContent = 'Passwords do not match.';
+          return;
+        }
+        msg.style.color = '#0d47a1';
+        msg.textContent = 'Account created (demo).';
+      });
+    </script>
+  </body>
+</html>

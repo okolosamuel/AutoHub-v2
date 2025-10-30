@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AutoHub — Premium Car Collection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="nav.js"></script>
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false"><span class="bar"></span></button>
+        <div class="logo">AutoHub</div>
+        <nav class="nav-links">
+          <a href="index.html" class="active">Buy</a>
+          <a href="sell.html">Sell</a>
+          <a href="finance.html">Finance</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="actions">
+          <a class="btn outline" href="login.html">Login</a>
+          <a class="btn primary" href="signup.html">Sign Up</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="container hero-content">
+        <h1>Premium Car Collection</h1>
+        <p>Discover hand‑picked vehicles with transparent pricing and instant financing.</p>
+        <div class="hero-ctas">
+          <a class="btn primary" href="#explore">Shop Cars</a>
+          <a class="btn ghost" href="#">Sell a Car</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="search-panel">
+      <div class="container">
+        <form id="searchForm" class="search-form">
+          <div class="field">
+            <label for="brandSelect">Brand</label>
+            <select id="brandSelect">
+              <option value="all" selected>All brands</option>
+              <option value="ford">Ford</option>
+              <option value="bmw">BMW</option>
+              <option value="mercedes">Mercedes</option>
+              <option value="audi">Audi</option>
+              <option value="ferrari">Ferrari</option>
+              <option value="tesla">Tesla</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="modelInput">Model</label>
+            <input id="modelInput" type="text" placeholder="e.g. Mustang" />
+          </div>
+          <div class="field">
+            <label for="priceRange">Max Price <span id="priceValue">$80,000</span></label>
+            <input id="priceRange" type="range" min="20000" max="120000" step="1000" value="80000" />
+          </div>
+          <div class="actions-inline">
+            <button class="btn primary" type="submit">Search Now</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="brands">
+      <div class="container">
+        <h2>Browse By Brands</h2>
+        <div class="brand-list" id="brandList">
+          <button class="brand-chip active" data-brand="all">All</button>
+          <button class="brand-chip" data-brand="ford">Ford</button>
+          <button class="brand-chip" data-brand="bmw">BMW</button>
+          <button class="brand-chip" data-brand="mercedes">Mercedes</button>
+          <button class="brand-chip" data-brand="audi">Audi</button>
+          <button class="brand-chip" data-brand="ferrari">Ferrari</button>
+          <button class="brand-chip" data-brand="tesla">Tesla</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="inventory" id="explore">
+      <div class="container">
+        <div class="inventory-header">
+          <h2>Explore All Vehicles</h2>
+          <div class="inventory-actions">
+            <button class="btn small">Newest</button>
+            <button class="btn small outline">Price</button>
+            <button class="btn small outline">Popular</button>
+          </div>
+        </div>
+        <div class="grid" id="vehicleGrid">
+          <!-- Vehicle Cards -->
+          <article class="card" data-brand="ford" data-title="Ford Mustang GT" data-price="65000">
+            <div class="image-wrap">
+              <img src="https://picsum.photos/seed/car1/640/400" alt="Ford Mustang" />
+              <span class="badge">Ford</span>
+            </div>
+            <div class="card-body">
+              <h3>Ford Mustang GT</h3>
+              <div class="price">$65,000</div>
+              <ul class="specs">
+                <li>2021</li><li>12k mi</li><li>Manual</li>
+              </ul>
+              <div class="card-actions"><button class="btn outline small">Details</button><button class="btn small">Buy</button></div>
+            </div>
+          </article>
+
+          <article class="card" data-brand="bmw" data-title="BMW M4 Competition" data-price="78000">
+            <div class="image-wrap">
+              <img src="https://picsum.photos/seed/car2/640/400" alt="BMW M4" />
+              <span class="badge">BMW</span>
+            </div>
+            <div class="card-body">
+              <h3>BMW M4 Competition</h3>
+              <div class="price">$78,000</div>
+              <ul class="specs"><li>2022</li><li>7k mi</li><li>Auto</li></ul>
+              <div class="card-actions"><button class="btn outline small">Details</button><button class="btn small">Buy</button></div>
+            </div>
+          </article>
+
+          <article class="card" data-brand="mercedes" data-title="Mercedes C63 AMG" data-price="82000">
+            <div class="image-wrap">
+              <img src="https://picsum.photos/seed/car3/640/400" alt="Mercedes C63" />
+              <span class="badge">Mercedes</span>
+            </div>
+            <div class="card-body">
+              <h3>Mercedes C63 AMG</h3>
+              <div class="price">$82,000</div>
+              <ul class="specs"><li>2020</li><li>22k mi</li><li>Auto</li></ul>
+              <div class="card-actions"><button class="btn outline small">Details</button><button class="btn small">Buy</button></div>
+            </div>
+          </article>
+
+          <article class="card" data-brand="audi" data-title="Audi R8 V10" data-price="115000">
+            <div class="image-wrap">
+              <img src="https://picsum.photos/seed/car4/640/400" alt="Audi R8" />
+              <span class="badge">Audi</span>
+            </div>
+            <div class="card-body">
+              <h3>Audi R8 V10</h3>
+              <div class="price">$115,000</div>
+              <ul class="specs"><li>2019</li><li>18k mi</li><li>Auto</li></ul>
+              <div class="card-actions"><button class="btn outline small">Details</button><button class="btn small">Buy</button></div>
+            </div>
+          </article>
+
+          <article class="card" data-brand="ferrari" data-title="Ferrari 488 GTB" data-price="190000">
+            <div class="image-wrap">
+              <img src="https://picsum.photos/seed/car5/640/400" alt="Ferrari 488" />
+              <span class="badge">Ferrari</span>
+            </div>
+            <div class="card-body">
+              <h3>Ferrari 488 GTB</h3>
+              <div class="price">$190,000</div>
+              <ul class="specs"><li>2018</li><li>9k mi</li><li>Auto</li></ul>
+              <div class="card-actions"><button class="btn outline small">Details</button><button class="btn small">Buy</button></div>
+            </div>
+          </article>
+
+          <article class="card" data-brand="tesla" data-title="Tesla Model S Plaid" data-price="98000">
+            <div class="image-wrap">
+              <img src="https://picsum.photos/seed/car6/640/400" alt="Tesla Model S" />
+              <span class="badge">Tesla</span>
+            </div>
+            <div class="card-body">
+              <h3>Tesla Model S Plaid</h3>
+              <div class="price">$98,000</div>
+              <ul class="specs"><li>2023</li><li>4k mi</li><li>Auto</li></ul>
+              <div class="card-actions"><button class="btn outline small">Details</button><button class="btn small">Buy</button></div>
+            </div>
+          </article>
+
+          <article class="card" data-brand="bmw" data-title="BMW i8 Roadster" data-price="89000">
+            <div class="image-wrap">
+              <img src="https://picsum.photos/seed/car7/640/400" alt="BMW i8" />
+              <span class="badge">BMW</span>
+            </div>
+            <div class="card-body">
+              <h3>BMW i8 Roadster</h3>
+              <div class="price">$89,000</div>
+              <ul class="specs"><li>2019</li><li>21k mi</li><li>Auto</li></ul>
+              <div class="card-actions"><button class="btn outline small">Details</button><button class="btn small">Buy</button></div>
+            </div>
+          </article>
+
+          <article class="card" data-brand="ford" data-title="Ford F-150 Raptor" data-price="72000">
+            <div class="image-wrap">
+              <img src="https://picsum.photos/seed/car8/640/400" alt="Ford Raptor" />
+              <span class="badge">Ford</span>
+            </div>
+            <div class="card-body">
+              <h3>Ford F‑150 Raptor</h3>
+              <div class="price">$72,000</div>
+              <ul class="specs"><li>2022</li><li>15k mi</li><li>Auto</li></ul>
+              <div class="card-actions"><button class="btn outline small">Details</button><button class="btn small">Buy</button></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2025 AutoHub. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
